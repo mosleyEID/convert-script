@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#convert_script_crf.sh - webm bash converter
+#convert_script_crf.sh - webm bash FFMPEG converter. 2-pass CRF
 
 #USEAGE - convert_script_crf.sh input_file [ crf [ format [ scale ] ] ]
 
