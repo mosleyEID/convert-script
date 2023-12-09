@@ -10,8 +10,8 @@
 [[ $# -gt 3 ]] && SCL=$4 || SCL='896:504'
 [[ $# -gt 4 ]] && BRT=$5 || BRT='0.07'
 [[ $# -gt 5 ]] && SAT=$4 || SAT='1'
-[[ -f $OUTPUT  ]] && echo "file exists" && sleep 5 && rm $OUTPUT
 FILENAME=$(basename ${1%.*}) OUT=${FILENAME}_crf$CRF.$FMT
+[[ -f OUTPUT/$OUT  ]] && echo "file exists" && sleep 5 && rm OUTPUT/$OUT
 echo -e CRF: $CRF \\nSCALE: $SCL \\nFILENAME: $FILENAME.${1##*.} \\nFMT: $FMT \\nBRT: $BRT \\nSAT: $SAT \\nOUTFILE: OUTPUT/$OUT
 sleep 5
 ffmpeg -i $1 -c:v libvpx-vp9 -b:v 0 -crf $CRF -pass 1 -an -f null /dev/null && \
